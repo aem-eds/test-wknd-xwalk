@@ -34,7 +34,10 @@
         "featured-article",
         "blockquote",
         "article-details",
-        "offer"
+        "offer",
+        "simple-form",
+        "form",
+        "form-embed"
       ]
     },
     {
