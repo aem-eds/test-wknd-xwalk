@@ -299,6 +299,18 @@
     ]
   },
   {
+    "id": "simple-form",
+    "fields": [
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "formUrl",
+        "label": "Form Path",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "form",
     "fields": [
        {
