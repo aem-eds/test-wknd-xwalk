@@ -67,17 +67,6 @@ export default function functions(debug) {
       },
     },
 
-    ceiling: {
-      func: (args) => {
-        const num = toNumber(args[0]);
-        const significance = toNumber(args[1]);
-        if (num === 0 || significance === 0) {
-          return 0;
-        }
-        return Math.ceil(num / significance) * significance;
-      },
-    },
-
     min: {
       func: (args) => {
         // flatten the args into a single array
@@ -103,13 +92,6 @@ export default function functions(debug) {
 
         return array.reduce(compare, isNumber ? toNumber(first) : toString(first));
       },
-    },
-
-    sum: {
-      func: (args) => args.reduce((sum, x) => {
-        if (Array.isArray(x)) return sum + fnMap.sum.func(x);
-        return sum + toNumber(x);
-      }, 0),
     },
   };
   return fnMap;
