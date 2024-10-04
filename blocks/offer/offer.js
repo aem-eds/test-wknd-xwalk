@@ -17,35 +17,36 @@ export default async function decorate(block) {
   const cfReq = await fetch(offerpath+".-1.json", options)
     .then((response) => response.json())
     .then((contentfragment) => {
-      let offer = '';
+      let offer = {};
       const mobileData = contentfragment['jcr:content'].data.mobile;
       if (mobileData) {
-        //offer = contentfragment.data.offerByPath.item;
-        console.log(mobileData);
-        console.log("Title: ", mobileData.title);
-        console.log("Banner Image: ", mobileData.bannerimage);
-        console.log("CTA Label: ", mobileData.ctalabel);
-        console.log("Description: ", mobileData.description);
+        offer.title = mobileData.title;
+        offer.subtitle = mobileData.subtitle;
+        offer.bannerimage = mobileData.bannerimage;
+        offer.description = mobileData.description;
+        offer.ctalabel = mobileData.ctalabel;
+        offer.ctaurl = mobileData.ctaurl;
       }else{
-        const masterData = response.jcr.content.data.master;
-        console.log(masterData);
-        console.log("Title: ", masterData.title);
-        console.log("Banner Image: ", masterData.bannerimage);
-        console.log("CTA Label: ", mobileData.ctalabel);
-        console.log("Description: ", masterData.description);
+        const masterData = contentfragment['jcr:content'].data.master;        
+        offer.title = mobileData.title;
+        offer.subtitle = mobileData.subtitle;
+        offer.bannerimage = mobileData.bannerimage;
+        offer.description = mobileData.description;
+        offer.ctalabel = mobileData.ctalabel;
+        offer.ctaurl = mobileData.ctaurl;
       }
       return offer;
     });
 
-  const itemId = `urn:aemconnection:${offerpath}/jcr:content/data/${variationname}`;
+ // const itemId = `urn:aemconnection:${offerpath}/jcr:content/data/${variationname}`;
 
   block.innerHTML = `
-  <div class='banner-content' data-aue-resource=${itemId} data-aue-type="reference" data-aue-filter="cf">
-      <div data-aue-prop="heroImage" data-aue-type="media" class='banner-detail' style="background-image: linear-gradient(90deg,rgba(0,0,0,0.6), rgba(0,0,0,0.1) 80%) ,url(${aempublishurl+cfReq.heroImage._dynamicUrl});">
-          <p data-aue-prop="pretitle" data-aue-type="text" class='pretitle'>${cfReq.pretitle}</p>
-          <p data-aue-prop="headline" data-aue-type="text" class='headline'>${cfReq.headline}</p>
-          <p data-aue-prop="detail" data-aue-type="richtext" class='detail'>${cfReq.detail.plaintext}</p>
-          <p class="button-container"><a data-aue-prop="ctaUrl" data-aue-type="text" href="${cfReq.ctaUrl._path.replace("/content/securbank", "")}" title="${cfReq.callToAction}" class="button">${cfReq.callToAction}</a></p>
+  <div class='banner-content' data-aue-type="reference" data-aue-filter="cf">
+      <div data-aue-prop="heroImage" data-aue-type="media" class='banner-detail' style="background-image: linear-gradient(90deg,rgba(0,0,0,0.6), rgba(0,0,0,0.1) 80%) ,url(${cfReq.bannerimage});">
+          <p data-aue-prop="subtitle" data-aue-type="text" class='pretitle'>${cfReq.subtitle}</p>
+          <p data-aue-prop="title" data-aue-type="text" class='headline'>${cfReq.title}</p>
+          <p data-aue-prop="detail" data-aue-type="richtext" class='detail'>${cfReq.description}</p>
+          <p class="button-container"><a data-aue-prop="ctaUrl" data-aue-type="text" href="${cfReq.ctaurl}" title="${cfReq.ctalabel}" class="button">${cfReq.ctalabel}</a></p>
       </div>
       <div class='banner-logo'>
       </div>
