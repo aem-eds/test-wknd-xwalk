@@ -1,9 +1,8 @@
-
 /* eslint-disable no-underscore-dangle */
 export default async function decorate(block) {
-  const aempublishurl = 'https://publish-p115476-e1135027.adobeaemcloud.com';
-  const aemauthorurl = 'https://author-p115476-e1135027.adobeaemcloud.com';
-  const persistedquery = '/graphql/execute.json/securbank/OfferByPath';
+  const aempublishurl = 'https://publish-p51327-e1446332.adobeaemcloud.com/';
+  const aemauthorurl = 'https://author-p51327-e1446332.adobeaemcloud.com';
+  const persistedquery = '/graphql/execute.json/wknd-shared/offer-by-path';
   const offerpath = block.querySelector(':scope div:nth-child(1) > div a').innerHTML.trim();
   const variationname = block.querySelector(':scope div:nth-child(2) > div > p').innerText ? block.querySelector(':scope div:nth-child(2) > div > p').innerText : 'main';
   //const variationname = block.querySelector(':scope div:nth-child(2) > div').innerHTML.trim();
