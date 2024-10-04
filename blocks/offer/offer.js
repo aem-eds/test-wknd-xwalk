@@ -18,9 +18,9 @@ export default async function decorate(block) {
     .then((response) => response.json())
     .then((contentfragment) => {
       let offer = '';
-      const mobileData = response.jcr.content.data.mobile;
+      const mobileData = contentfragment.jcr.content.data.mobile;
       if (mobileData) {
-        offer = contentfragment.data.offerByPath.item;
+        //offer = contentfragment.data.offerByPath.item;
         console.log(mobileData);
         console.log("Title: ", mobileData.title);
         console.log("Banner Image: ", mobileData.bannerimage);
