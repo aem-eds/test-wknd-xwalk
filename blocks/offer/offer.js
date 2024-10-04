@@ -18,7 +18,7 @@ export default async function decorate(block) {
     .then((response) => response.json())
     .then((contentfragment) => {
       let offer = '';
-      const mobileData = contentfragment.jcr.content.data.mobile;
+      const mobileData = contentFragment['jcr:content'].data.mobile;
       if (mobileData) {
         //offer = contentfragment.data.offerByPath.item;
         console.log(mobileData);
