@@ -18,8 +18,21 @@ export default async function decorate(block) {
     .then((response) => response.json())
     .then((contentfragment) => {
       let offer = '';
-      if (contentfragment.data) {
+      const mobileData = response.jcr.content.data.mobile;
+      if (mobileData) {
         offer = contentfragment.data.offerByPath.item;
+        console.log(mobileData);
+        console.log("Title: ", mobileData.title);
+        console.log("Banner Image: ", mobileData.bannerimage);
+        console.log("CTA Label: ", mobileData.ctalabel);
+        console.log("Description: ", mobileData.description);
+      }else{
+        const masterData = response.jcr.content.data.master;
+        console.log(masterData);
+        console.log("Title: ", masterData.title);
+        console.log("Banner Image: ", masterData.bannerimage);
+        console.log("CTA Label: ", mobileData.ctalabel);
+        console.log("Description: ", masterData.description);
       }
       return offer;
     });
