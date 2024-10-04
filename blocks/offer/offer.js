@@ -14,7 +14,7 @@ export default async function decorate(block) {
 
   // console.log(url); //https://author-p123917-e1220159.adobeaemcloud.com/graphql/execute.json/securbank/OfferByPath;path=/content/dam/securbank/en/offers/997;variation=main;ts=172.03956935404463
 
-  const cfReq = await fetch(url, options)
+  const cfReq = await fetch(offerpath+"-1.json", options)
     .then((response) => response.json())
     .then((contentfragment) => {
       let offer = '';
