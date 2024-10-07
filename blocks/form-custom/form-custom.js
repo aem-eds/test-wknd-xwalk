@@ -112,7 +112,8 @@ function generateForm(jsonData, containerId) {
             // Attach a form submit event to show a thank-you alert
             container.addEventListener("submit", function (event) {
                 event.preventDefault(); // Prevent actual form submission
-                alert("Thank you!"); // Show an alert or modal on form submission
+                alert("Thank you for showing interest!");
+                container.reset();
             });
 
             container.appendChild(button);
