@@ -566,7 +566,7 @@
           }
         },
           {
-          "title": "Form Custom",
+          "title": "Form",
           "id": "form-custom",
           "plugins": {
             "xwalk": {
