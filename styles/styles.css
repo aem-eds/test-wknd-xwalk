@@ -356,7 +356,8 @@ main .section[data-section-status='initialized'] {
 
 
 
-.EditableOverlays.tool-components [data-aue-type="component"] {
+.EditableOverlays.tool-components p[data-aue-behavior="component"],
+.EditableOverlays.tool-components div[data-aue-behavior="component"] {
   border: 1px solid #0000ff;
   min-height: 60px;
 }
