@@ -1,19 +1,58 @@
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
+/* Base styling for the form container */
+form#dynamicForm {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
-input, button {
-    margin: 10px 0;
-    padding: 8px;
-}
-
-label {
+/* Style for all labels */
+form#dynamicForm label {
+    font-weight: bold;
+    display: block;
     margin-top: 10px;
 }
 
-input[type="radio"] {
-    margin-right: 5px;
+/* Style for text input fields */
+form#dynamicForm input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for the radio button group */
+form#dynamicForm .radio-group {
+    margin: 15px 0;
+}
+
+/* Individual radio button item */
+form#dynamicForm .radio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Style for radio buttons */
+form#dynamicForm input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Style for the submit button */
+form#dynamicForm button {
+    width: 100%;
+    padding: 10px;
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form#dynamicForm button:hover {
+    background: #005a9e;
 }
