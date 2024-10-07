@@ -356,8 +356,8 @@ main .section[data-section-status='initialized'] {
 
 
 
-.EditableOverlays.tool-components ~ iframe p[data-aue-behavior="component"],
-.EditableOverlays.tool-components ~ iframe div[data-aue-behavior="component"] {
+.adobe-ue-edit p[data-aue-behavior="component"],
+.adobe-ue-edit div[data-aue-behavior="component"] {
   border: 1px solid #0000ff;
   min-height: 60px;
 }
