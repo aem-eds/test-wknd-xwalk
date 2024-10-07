@@ -302,7 +302,7 @@
     "id": "form-custom",
     "fields": [
       {
-        "component": "aem-form-custom",
+        "component": "text-input",
         "name": "customformpath",
         "value": "",
         "label": "Form path",
