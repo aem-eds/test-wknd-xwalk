@@ -299,6 +299,18 @@
     ]
   },
   {
+    "id": "form-custom",
+    "fields": [
+      {
+        "component": "aem-form-custom",
+        "name": "customformpath",
+        "value": "",
+        "label": "Form path",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "simple-form",
     "fields": [
       {
