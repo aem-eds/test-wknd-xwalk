@@ -6,6 +6,7 @@ form#dynamicForm {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
+    box-sizing: border-box;
 }
 
 /* Style for all labels */
@@ -55,4 +56,14 @@ form#dynamicForm button {
 
 form#dynamicForm button:hover {
     background: #005a9e;
+}
+
+
+form#dynamicForm .radio-item input {
+    width: auto;
+    margin-bottom: 0;
+}
+
+form#dynamicForm .radio-item label {
+    margin-top: 0;
 }
