@@ -133,7 +133,7 @@ const formJson = {
 // Function to render the form dynamically
 function renderForm(json) {
     // Get the guideContainer object which holds all form fields
-    const fields = json.jcr:content.guideContainer;
+    const fields = json['jcr:content'].guideContainer;
 
     // Create a form element
     const form = document.createElement("form");
