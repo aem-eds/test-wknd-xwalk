@@ -72,7 +72,7 @@ function generateForm(jsonData, containerId) {
 
             container.appendChild(label);
             container.appendChild(input);
-            container.appendChild(document.createElement('br'));
+            //container.appendChild(document.createElement('br'));
 
         } else if (resourceType === "aem-trials/components/adaptiveForm/radiobutton") {
             const wrapper = document.createElement('div');
