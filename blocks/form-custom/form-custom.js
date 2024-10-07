@@ -121,7 +121,7 @@ function generateForm(jsonData, containerId) {
     }
 
     // Select the specific container where the form should be rendered
-    const targetContainer = document.getElementsByTagName("main")[0];
+    const targetContainer = document.getElementsByTagName("main")[0].getElementsByClassName("section")[0];
     if (targetContainer) {
         targetContainer.appendChild(container); // Place the form inside the specified container
     } else {
