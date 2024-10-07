@@ -1,4 +1,4 @@
-// Sample JSON data (you can replace this with your own data)
+// Sample JSON data (use your data if different)
 const jsonInput = {
     "jcr:created": "Mon Oct 07 2024 10:32:55 GMT+0000",
     "jcr:createdBy": "kmrobin@adobe.com",
@@ -9,14 +9,6 @@ const jsonInput = {
         "sling:configRef": "/conf/forms/user01/",
         "sling:resourceType": "aem-trials/components/adaptiveForm/page",
         "jcr:title": "user01",
-        "cq:deviceGroups": [
-            "/etc/mobile/groups/responsive"
-        ],
-        "cq:lastModified": "Mon Oct 07 2024 13:55:17 GMT+0000",
-        "cq:lastModifiedBy": "kmrobin@adobe.com",
-        "jcr:primaryType": "cq:PageContent",
-        "cq:template": "/conf/aem-trials/settings/wcm/templates/blank-af-v2",
-        "jcr:language": "en",
         "guideContainer": {
             "textinput": {
                 "jcr:created": "Mon Oct 07 2024 10:38:48 GMT+0000",
@@ -54,8 +46,8 @@ const jsonInput = {
     }
 };
 
-// Function to generate the form dynamically based on JSON input
-function generateForm(jsonData) {
+// Function to generate the form dynamically based on JSON input and place it in a specific container
+function generateForm(jsonData, containerId) {
     const container = document.createElement('form'); // Create a form element
     container.id = "dynamicForm"; // Set the form's ID
 
@@ -116,12 +108,26 @@ function generateForm(jsonData) {
             button.type = "submit";
             button.name = element.name;
             button.textContent = element["jcr:title"];
+
+            // Attach a form submit event to show a thank-you alert
+            container.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent actual form submission
+                alert("Thank you!"); // Show an alert or modal on form submission
+            });
+
             container.appendChild(button);
         }
     }
 
-    document.body.appendChild(container); // Append the form to the body
+    // Select the specific container where the form should be rendered
+    const targetContainer = document.getElementById(containerId);
+    if (targetContainer) {
+        targetContainer.appendChild(container); // Place the form inside the specified container
+    } else {
+        console.warn(`Container with ID "${containerId}" not found. Appending form to the body.`);
+        document.body.appendChild(container); // Fallback: Append to the body if no container is found
+    }
 }
 
-// Call the function to generate the form on the page
-generateForm(jsonInput);
+// Call the function to generate the form in a specific container on the page
+generateForm(jsonInput, 'formContainer'); // Replace 'formContainer' with your target container ID
