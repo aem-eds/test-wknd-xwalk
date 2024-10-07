@@ -28,12 +28,12 @@ export default async function decorate(block) {
         offer.ctaurl = mobileData.ctaurl;
       }else{
         const masterData = contentfragment['jcr:content'].data.master;        
-        offer.title = mobileData.title;
-        offer.subtitle = mobileData.subtitle;
-        offer.bannerimage = mobileData.bannerimage;
-        offer.description = mobileData.description;
-        offer.ctalabel = mobileData.ctalabel;
-        offer.ctaurl = mobileData.ctaurl;
+        offer.title = masterData.title;
+        offer.subtitle = masterData.subtitle;
+        offer.bannerimage = masterData.bannerimage;
+        offer.description = masterData.description;
+        offer.ctalabel = masterData.ctalabel;
+        offer.ctaurl = masterData.ctaurl;
       }
       return offer;
     });
