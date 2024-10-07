@@ -353,3 +353,10 @@ main .section[data-section-status='initialized'] {
 .cc-btn.cc-save {
   padding: 13px 29px;
 }
+
+
+
+.EditableOverlays.tool-components div {
+  opacity: 1;
+  min-height: 60px;
+}
