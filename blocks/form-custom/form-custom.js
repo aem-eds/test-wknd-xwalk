@@ -130,5 +130,9 @@ function generateForm(jsonData, containerId) {
     }
 }
 
-// Call the function to generate the form in a specific container on the page
-generateForm(jsonInput, 'formContainer'); // Replace 'formContainer' with your target container ID
+
+export default function decorate(block) {
+
+    // Call the function to generate the form in a specific container on the page
+    generateForm(jsonInput, 'formContainer'); // Replace 'formContainer' with your target container ID
+}
