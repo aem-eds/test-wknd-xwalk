@@ -15,7 +15,7 @@ async function generateForm(fieldDiv, containerId, formPath) {
       const imgElement = document.createElement('img');
       imgElement.src = 'https://via.placeholder.com/300'; // Set the image URL here
       imgElement.alt = 'Placeholder Image'; // Optionally, set alt text
-      imgElement.width = 300; // Optionally, set image width
+      imgElement.width = 700; // Optionally, set image width
       
       // Append the image to the imageDiv
       imageDiv.appendChild(imgElement);
