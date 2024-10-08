@@ -12,11 +12,11 @@ async function generateForm(fieldDiv, containerId, formPath) {
     </div>
       
       const parentFormDiv = document.createElement('div');
-      parentFormDiv.className = "form-image-container";
+      parentFormDiv.className = "form-parent-container";
       fieldDiv.appendChild(parentFormDiv);
       
       const imageDiv = document.createElement('div');
-      imageDiv.className = "custom-form-image-container";
+      imageDiv.className = "form-image-container";
       parentFormDiv.appendChild(imageDiv);
       
       const container = document.createElement('form'); // Create a form element     
