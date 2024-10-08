@@ -4,7 +4,7 @@ export default async function decorate(block) {
   const aemauthorurl = 'https://author-p51327-e1446332.adobeaemcloud.com';
   const persistedquery = '/graphql/execute.json/wknd-shared/offer-by-path';
   const offerpath = block.querySelector(':scope div:nth-child(1) > div a').innerHTML.trim();
-  const variationname = "mobile";//block.querySelector(':scope div:nth-child(2) > div > p').innerText ? block.querySelector(':scope div:nth-child(2) > div > p').innerText : 'main';
+  const variationname = "master";//block.querySelector(':scope div:nth-child(2) > div > p').innerText ? block.querySelector(':scope div:nth-child(2) > div > p').innerText : 'main';
   //const variationname = block.querySelector(':scope div:nth-child(2) > div').innerHTML.trim();
 
   const url = window.location && window.location.origin && window.location.origin.includes('author')
@@ -18,15 +18,15 @@ export default async function decorate(block) {
     .then((response) => response.json())
     .then((contentfragment) => {
       let offer = {};
-      const mobileData = contentfragment['jcr:content'].data.mobile;
-      if (mobileData) {
-        offer.title = mobileData.title;
-        offer.subtitle = mobileData.subtitle;
-        offer.bannerimage = mobileData.bannerimage;
-        offer.description = mobileData.description;
-        offer.ctalabel = mobileData.ctalabel;
-        offer.ctaurl = mobileData.ctaurl;
-      }else{
+      const masterData = contentfragment['jcr:content'].data.master;
+      if (masterData) {
+        offer.title = masterData.title;
+        offer.subtitle = masterData.subtitle;
+        offer.bannerimage = masterData.bannerimage;
+        offer.description = masterData.description;
+        offer.ctalabel = masterData.ctalabel;
+        offer.ctaurl = masterData.ctaurl;
+      }/*else{
         const masterData = contentfragment['jcr:content'].data.master;        
         offer.title = masterData.title;
         offer.subtitle = masterData.subtitle;
@@ -34,7 +34,7 @@ export default async function decorate(block) {
         offer.description = masterData.description;
         offer.ctalabel = masterData.ctalabel;
         offer.ctaurl = masterData.ctaurl;
-      }
+      }*/
       return offer;
     });
 
