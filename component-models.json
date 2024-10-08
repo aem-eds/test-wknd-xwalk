@@ -307,6 +307,13 @@
         "value": "",
         "label": "Form path",
         "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Adaptive Form",
+        "multi": false
       }
     ]
   },
