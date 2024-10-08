@@ -5,12 +5,6 @@ async function generateForm(fieldDiv, containerId, formPath) {
     if (response.ok) {
     
       const jsonData = await response.json();
-      
-     
-      <div class="image-container">
-        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
-    </div>
-      
       const parentFormDiv = document.createElement('div');
       parentFormDiv.className = "form-parent-container";
       fieldDiv.appendChild(parentFormDiv);
