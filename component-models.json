@@ -288,13 +288,6 @@
         "value": "",
         "label": "Content Fragment path",
         "valueType": "string"
-      },
-      {
-        "component": "text-input",
-        "name": "variation",
-        "value": "",
-        "label": "Variation",
-        "valueType": "string"
       }
     ]
   },
