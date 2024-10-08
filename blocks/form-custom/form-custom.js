@@ -163,7 +163,7 @@ export default function decorate(fieldDiv) {
      const anchorInnerHTML = anchor.innerHTML;     
      
      if(anchorInnerHTML){
-          const response = await fetch(`https://author-p51327-e1446332.adobeaemcloud.com/${anchorInnerHTML}.-1.json`);
+          const response = await fetch("https://author-p51327-e1446332.adobeaemcloud.com"+anchorInnerHTML+".-1.json");
             if (response.ok) {
               const result = await response.json();
              // Call the function to generate the form in a specific container on the page
