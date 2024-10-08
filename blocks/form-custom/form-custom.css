@@ -70,3 +70,18 @@ form#dynamicForm .radio-item input {
 form#dynamicForm .radio-item label {
     margin-top: 0;
 }
+
+.form-parent-container {
+    display: flex;
+    align-items: center; /* Vertically align the items */
+    gap: 20px; /* Add space between the form and image */
+}
+
+#dynamicForm {
+    flex: 1; /* Allow form to take up some space */
+}
+
+.form-image-container img {
+    width: 300px; /* Set a fixed width for the image */
+    height: auto;
+}
