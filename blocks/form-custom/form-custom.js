@@ -1,7 +1,7 @@
 // Sample JSON data (use your data if different)
 
-async function generateForm(containerId) {
-  const formurl = `https://author-p51327-e1446332.adobeaemcloud.com${anchorInnerHTML}.-1.json`;
+async function generateForm(containerId, formPath) {
+  const formurl = `https://author-p51327-e1446332.adobeaemcloud.com${formPath}.-1.json`;
   const response = await fetch(formurl);
     if (response.ok) {
       const result = await response.json();
@@ -145,7 +145,7 @@ export default function decorate(fieldDiv) {
      const anchorInnerHTML = anchor.innerHTML;     
      
      if(anchorInnerHTML){
-       generateForm('formContainer'); // Replace 'formContainer' with your target container ID 
+       generateForm('formContainer', anchorInnerHTML); // Replace 'formContainer' with your target container ID 
      }
      if (anchor) {
         anchor.style.display = 'none';
