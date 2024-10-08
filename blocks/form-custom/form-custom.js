@@ -96,7 +96,7 @@ export default function decorate(fieldDiv) {
      const anchorInnerHTML = anchor.innerHTML;     
      
      if(anchorInnerHTML && anchorInnerHTML.startsWith("/content/forms/af/")){
-       generateForm('formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
+       generateForm(fieldDiv, 'formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
      }
      if (anchor) {
         anchor.style.display = 'none';
