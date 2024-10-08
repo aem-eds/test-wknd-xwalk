@@ -158,6 +158,7 @@ function generateForm(jsonData, containerId) {
 
 
 export default function decorate(fieldDiv) {
+      alert("hi");
      const anchor = fieldDiv.querySelector('a');
      const anchorInnerHTML = anchor.innerHTML;     
      
