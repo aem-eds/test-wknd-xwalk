@@ -5,9 +5,23 @@ async function generateForm(fieldDiv, containerId, formPath) {
     if (response.ok) {
     
       const jsonData = await response.json();
-  
-      const container = document.createElement('form'); // Create a form element
-      fieldDiv.appendChild(container);
+      
+     
+      <div class="image-container">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+    </div>
+      
+      const parentFormDiv = document.createElement('div');
+      parentFormDiv.className = "form-image-container";
+      fieldDiv.appendChild(parentFormDiv);
+      
+      const imageDiv = document.createElement('div');
+      imageDiv.className = "custom-form-image-container";
+      parentFormDiv.appendChild(imageDiv);
+      
+      const container = document.createElement('form'); // Create a form element     
+      parentFormDiv.appendChild(container);
+      
       container.id = "dynamicForm"; // Set the form's ID
     
         // Get the guideContainer elements from the JSON structure
