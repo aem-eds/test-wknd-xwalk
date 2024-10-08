@@ -22,6 +22,7 @@
     {
       "id": "section",
       "components": [
+        "offer",
         "text",
         "image",
         "button",
@@ -33,8 +34,7 @@
         "teaser",
         "featured-article",
         "blockquote",
-        "article-details",
-        "offer",
+        "article-details",        
         "form-custom",
         "simple-form",
         "form",
