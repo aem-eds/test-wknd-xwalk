@@ -302,13 +302,6 @@
     "id": "form-custom",
     "fields": [
       {
-        "component": "text-input",
-        "name": "customformpath",
-        "value": "",
-        "label": "Form path",
-        "valueType": "string"
-      },
-      {
             "component": "aem-content",
             "name": "formPath",
             "label": "Adaptive Form",
