@@ -13,7 +13,7 @@ async function generateForm(fieldDiv, containerId, formPath) {
       imageDiv.className = "form-image-container";
 
       const imgElement = document.createElement('img');
-      imgElement.src = 'https://wknd.site/us/en/adventures/cycling-tuscany/_jcr_content/root/container/container/tabs/item_1570890135033/par1/image.coreimg.60.1600.jpeg/1660323790999/adobestock-261097343.jpeg'; // Set the image URL here
+      imgElement.src = 'https://author-p51327-e1446332.adobeaemcloud.com/content/dam/aemcshol/mobile/adobestock-185324648.jpg'; // Set the image URL here
       imgElement.alt = 'Placeholder Image'; // Optionally, set alt text
       imgElement.width = 700; // Optionally, set image width
       
