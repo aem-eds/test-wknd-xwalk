@@ -309,11 +309,10 @@
         "valueType": "string"
       },
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "fileReference",
-        "label": "Adaptive Form",
-        "multi": false
+            "component": "aem-content",
+            "name": "formPath",
+            "label": "Adaptive Form",
+            "valueType": "string"
       }
     ]
   },
