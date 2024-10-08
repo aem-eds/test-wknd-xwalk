@@ -1,13 +1,14 @@
 // Sample JSON data (use your data if different)
-
-async function generateForm(containerId, formPath) {
+async function generateForm(fieldDiv, containerId, formPath) {
   const formurl = `https://author-p51327-e1446332.adobeaemcloud.com${formPath}.-1.json`;
   const response = await fetch(formurl);
     if (response.ok) {
+    
       const jsonData = await response.json();
   
       const container = document.createElement('form'); // Create a form element
-        container.id = "dynamicForm"; // Set the form's ID
+      fieldDiv.appendChild(container);
+      container.id = "dynamicForm"; // Set the form's ID
     
         // Get the guideContainer elements from the JSON structure
         const elements = jsonData["jcr:content"]["guideContainer"];
@@ -77,7 +78,7 @@ async function generateForm(containerId, formPath) {
                 container.appendChild(button);
             }
         }
-    
+        /*
         // Select the specific container where the form should be rendered
         const targetContainer = document.getElementsByTagName("main")[0].getElementsByClassName("section")[0];
         if (targetContainer) {
@@ -86,58 +87,9 @@ async function generateForm(containerId, formPath) {
             console.warn(`Container with ID "${containerId}" not found. Appending form to the body.`);
             document.body.appendChild(container); // Fallback: Append to the body if no container is found
         }
-    }else{
-      
+        */
     }
 }
-
-
-const jsonInput = {
-    "jcr:created": "Mon Oct 07 2024 10:32:55 GMT+0000",
-    "jcr:createdBy": "kmrobin@adobe.com",
-    "jcr:primaryType": "cq:Page",
-    "jcr:content": {
-        "jcr:created": "Mon Oct 07 2024 10:32:55 GMT+0000",
-        "jcr:createdBy": "kmrobin@adobe.com",
-        "sling:configRef": "/conf/forms/user01/",
-        "sling:resourceType": "aem-trials/components/adaptiveForm/page",
-        "jcr:title": "user01",
-        "guideContainer": {
-            "textinput": {
-                "jcr:created": "Mon Oct 07 2024 10:38:48 GMT+0000",
-                "jcr:title": "First Name",
-                "mandatoryMessage": "First name is required",
-                "sling:resourceType": "aem-trials/components/adaptiveForm/textinput",
-                "required": "true",
-                "name": "txtFirstName",
-                "fieldType": "text-input"
-            },
-            "textinput_548878374": {
-                "jcr:title": "Email",
-                "sling:resourceType": "aem-trials/components/adaptiveForm/textinput",
-                "required": "true",
-                "name": "txtEmail",
-                "fieldType": "text-input",
-                "pattern": "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$",
-                "mandatoryMessage": "Email is required"
-            },
-            "radiobutton": {
-                "sling:resourceType": "aem-trials/components/adaptiveForm/radiobutton",
-                "jcr:title": "Age Group",
-                "enum": ["0", "1"],
-                "enumNames": ["20-30 years", "31 - 50 years"],
-                "name": "radioAgeGroup",
-                "fieldType": "radio-group"
-            },
-            "button": {
-                "jcr:title": "Submit",
-                "sling:resourceType": "aem-trials/components/adaptiveForm/button",
-                "name": "btnSubmit",
-                "fieldType": "button"
-            }
-        }
-    }
-};
 
 export default function decorate(fieldDiv) {
      const anchor = fieldDiv.querySelector('a');
