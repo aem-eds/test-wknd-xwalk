@@ -140,12 +140,11 @@ const jsonInput = {
 };
 
 export default function decorate(fieldDiv) {
-      alert("hi pankaj");
      const anchor = fieldDiv.querySelector('a');
      const anchorInnerHTML = anchor.innerHTML;     
      
-     if(anchorInnerHTML){
-       generateForm('formContainer', anchorInnerHTML); // Replace 'formContainer' with your target container ID 
+     if(anchorInnerHTML && anchorInnerHTML.startsWith("/content/forms/af/")){
+       generateForm('formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
      }
      if (anchor) {
         anchor.style.display = 'none';
