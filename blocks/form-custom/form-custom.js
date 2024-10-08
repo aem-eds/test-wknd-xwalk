@@ -1,4 +1,30 @@
 // Sample JSON data (use your data if different)
+
+async function populateDealership(model, location, powerTrain, list, dealerPanel, title, globals) {
+  if (model && location && powerTrain) {
+    const response = await fetch(`https://publish-p51113-e1377975.adobeaemcloud.com/content/nissan-forms-poc/dealerships.html?modelCode=${model}&powerTrain=${powerTrain}`);
+    if (response.ok) {
+      const result = await response.json();
+      const dealers = result.dealers || [];
+      globals.functions.setProperty(
+        list,
+        { value: dealers },
+      );
+      globals.functions.setProperty(
+        dealerPanel,
+        { label: { value: `Showing ${dealers.length} dealerships` } },
+      );
+
+      const name = carModelsMap[model] ? carModelsMap[model].name : '';
+      globals.functions.setProperty(
+        title,
+        { value: `with a ${name} ${powerTrain} available` },
+      );
+    }
+  }
+}
+
+
 const jsonInput = {
     "jcr:created": "Mon Oct 07 2024 10:32:55 GMT+0000",
     "jcr:createdBy": "kmrobin@adobe.com",
@@ -131,8 +157,22 @@ function generateForm(jsonData, containerId) {
 }
 
 
-export default function decorate(block) {
-
-    // Call the function to generate the form in a specific container on the page
-    generateForm(jsonInput, 'formContainer'); // Replace 'formContainer' with your target container ID
+export default function decorate(fieldDiv) {
+     const anchor = fieldDiv.querySelector('a');
+     const anchorInnerHTML = anchor.innerHTML;     
+     
+     if(anchorInnerHTML){
+          const response = await fetch(`https://author-p51327-e1446332.adobeaemcloud.com/${anchorInnerHTML}.-1.json`);
+            if (response.ok) {
+              const result = await response.json();
+             // Call the function to generate the form in a specific container on the page
+              generateForm(result, 'formContainer'); // Replace 'formContainer' with your target container ID
+            }
+     }
+     if (anchor) {
+        anchor.style.display = 'none';
+     }
+    //fieldDiv.appendChild(outerdiv);
 }
+     
+
