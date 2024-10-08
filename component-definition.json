@@ -404,21 +404,6 @@
           }
         },
         {
-          "title": "Adaptive Form",
-          "id": "form",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "fd/franklin/components/form/v1/form",
-                "template": {
-                  "fieldType": "form",
-                  "fd:version": "2.1"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Offer",
           "id": "offer",
           "plugins": {
@@ -596,15 +581,15 @@
           }
         },
         {
-          "title": "Adaptive Form - Embed",
-          "id": "form-embed",
+          "title": "Adaptive Form",
+          "id": "form",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+                "resourceType": "fd/franklin/components/form/v1/form",
                 "template": {
-                  "name": "Adaptive Form - Embed",
-                  "model": "form-embed"
+                  "fieldType": "form",
+                  "fd:version": "2.1"
                 }
               }
             }
