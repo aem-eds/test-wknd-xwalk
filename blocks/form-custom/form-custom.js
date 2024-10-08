@@ -112,15 +112,14 @@ async function generateForm(fieldDiv, containerId, formPath) {
 
 export default function decorate(fieldDiv) {
      const anchor = fieldDiv.querySelector('a');
-     const anchorInnerHTML = anchor.innerHTML;     
-     
-     if(anchorInnerHTML && anchorInnerHTML.startsWith("/content/forms/af/")){
-       generateForm(fieldDiv, 'formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
-     }else{
-        generateForm(fieldDiv, 'formContainer', '/content/forms/af/default'); // Replace 'formContainer' with your target container ID 
-     }
-     if (anchor) {
-        anchor.style.display = 'none';
+     if(anchor){
+       const anchorInnerHTML =  anchor.innerHTML;   
+       if(anchorInnerHTML && anchorInnerHTML.startsWith("/content/forms/af/")){
+         generateForm(fieldDiv, 'formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
+       }
+       anchor.style.display = 'none';
+     } else {
+         generateForm(fieldDiv, 'formContainer', '/content/forms/af/default'); // Replace 'formContainer' with your target container ID 
      }
     //fieldDiv.appendChild(outerdiv);
 }
