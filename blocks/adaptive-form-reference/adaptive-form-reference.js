@@ -119,9 +119,8 @@ export default function decorate(fieldDiv) {
        if(imgElement){
            imgSrc = imgElement.getAttribute('src');
        }
+       bg.style.display = 'none';
      }
-     bg.style.display = 'none';
-          
      if(anchor){
        const anchorInnerHTML =  anchor.innerHTML;   
        if(anchorInnerHTML && anchorInnerHTML.startsWith("/content/forms/af/")){
