@@ -1,5 +1,5 @@
 // Sample JSON data (use your data if different)
-async function generateForm(fieldDiv, containerId, formPath) {
+async function generateForm(fieldDiv, formImg, containerId, formPath) {
   const formurl = `https://author-p51327-e1446332.adobeaemcloud.com${formPath}.-1.json`;
   const response = await fetch(formurl);
     if (response.ok) {
@@ -13,7 +13,7 @@ async function generateForm(fieldDiv, containerId, formPath) {
       imageDiv.className = "form-image-container";
 
       const imgElement = document.createElement('img');
-      imgElement.src = 'https://author-p51327-e1446332.adobeaemcloud.com/content/dam/aemcshol/mobile/adobestock-185324648.jpg'; // Set the image URL here
+      imgElement.src = formImg ? formImg : 'https://author-p51327-e1446332.adobeaemcloud.com/content/dam/aemcshol/mobile/adobestock-185324648.jpg'; // Set the image URL here
       imgElement.alt = 'Placeholder Image'; // Optionally, set alt text
       imgElement.width = 700; // Optionally, set image width
       
@@ -112,14 +112,16 @@ async function generateForm(fieldDiv, containerId, formPath) {
 
 export default function decorate(fieldDiv) {
      const anchor = fieldDiv.querySelector('a');
+     const bg = fieldDiv.querySelector('picture');
+      
      if(anchor){
        const anchorInnerHTML =  anchor.innerHTML;   
        if(anchorInnerHTML && anchorInnerHTML.startsWith("/content/forms/af/")){
-         generateForm(fieldDiv, 'formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
+         generateForm(fieldDiv, null, 'formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
        }
        anchor.style.display = 'none';
      } else {
-         generateForm(fieldDiv, 'formContainer', '/content/forms/af/default'); // Replace 'formContainer' with your target container ID 
+         generateForm(fieldDiv, null, 'formContainer', '/content/forms/af/default'); // Replace 'formContainer' with your target container ID 
      }
     //fieldDiv.appendChild(outerdiv);
 }
