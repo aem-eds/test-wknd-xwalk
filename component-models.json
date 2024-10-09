@@ -292,7 +292,7 @@
     ]
   },
   {
-    "id": "form-custom",
+    "id": "adaptive-form-reference",
     "fields": [
       {
             "component": "aem-content",

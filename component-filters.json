@@ -23,6 +23,7 @@
       "id": "section",
       "components": [
         "offer",
+        "adaptive-form-reference",
         "text",
         "image",
         "button",
@@ -35,7 +36,6 @@
         "featured-article",
         "blockquote",
         "article-details",        
-        "form-custom",
         "simple-form",
         "form",
         "form-embed"
