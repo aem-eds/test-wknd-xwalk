@@ -113,15 +113,23 @@ async function generateForm(fieldDiv, formImg, containerId, formPath) {
 export default function decorate(fieldDiv) {
      const anchor = fieldDiv.querySelector('a');
      const bg = fieldDiv.querySelector('picture');
-      
+     var imgSrc = null;
+     if(bg){
+       var imgElement = pictureElement.querySelector('img');  
+       if(imgElement){
+           imgSrc = imgElement.getAttribute('src');
+       }
+     }
+     bg.style.display = 'none';
+          
      if(anchor){
        const anchorInnerHTML =  anchor.innerHTML;   
        if(anchorInnerHTML && anchorInnerHTML.startsWith("/content/forms/af/")){
-         generateForm(fieldDiv, null, 'formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
+         generateForm(fieldDiv, imgSrc, 'formContainer', anchorInnerHTML.replace('.-1.json', '')); // Replace 'formContainer' with your target container ID 
        }
        anchor.style.display = 'none';
      } else {
-         generateForm(fieldDiv, null, 'formContainer', '/content/forms/af/default'); // Replace 'formContainer' with your target container ID 
+         generateForm(fieldDiv, imgSrc, 'formContainer', '/content/forms/af/default'); // Replace 'formContainer' with your target container ID 
      }
     //fieldDiv.appendChild(outerdiv);
 }
