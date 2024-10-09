@@ -299,6 +299,13 @@
             "name": "formPath",
             "label": "Adaptive Form",
             "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Image",
+        "multi": false
       }
     ]
   },
