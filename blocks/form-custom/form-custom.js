@@ -115,7 +115,7 @@ export default function decorate(fieldDiv) {
      const bg = fieldDiv.querySelector('picture');
      var imgSrc = null;
      if(bg){
-       var imgElement = pictureElement.querySelector('img');  
+       var imgElement = bg.querySelector('img');  
        if(imgElement){
            imgSrc = imgElement.getAttribute('src');
        }
