@@ -22,7 +22,7 @@ export default async function decorate(block) {
       if (masterData) {
         offer.title = masterData.title;
         offer.subtitle = masterData.subtitle;
-        offer.bannerimage = encodeURIComponent(masterData.bannerimage);
+        offer.bannerimage = masterData.bannerimage.replace(/ /g, '%20');
         offer.description = masterData.description;
         offer.ctalabel = masterData.ctalabel;
         offer.ctaurl = masterData.ctaurl;
@@ -30,7 +30,7 @@ export default async function decorate(block) {
         const masterData = contentfragment['jcr:content'].data.master;        
         offer.title = masterData.title;
         offer.subtitle = masterData.subtitle;
-        offer.bannerimage =  encodeURIComponent(masterData.bannerimage);
+        offer.bannerimage =  masterData.bannerimage.replace(/ /g, '%20');
         offer.description = masterData.description;
         offer.ctalabel = masterData.ctalabel;
         offer.ctaurl = masterData.ctaurl;
